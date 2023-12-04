@@ -16,7 +16,7 @@ jobs:
       - name: Copy HTML files
         run: |
           mkdir -p public
-          cp -r ./* public/
+          cp -r carvilla_html_template/* public/
 
   deploy:
     runs-on: ubuntu-latest
