@@ -16,7 +16,7 @@ jobs:
       - name: Copy HTML files
         run: |
           mkdir -p public
-          cp -r * /public/
+          cp -r ./* /public/
 
   deploy:
     runs-on: ubuntu-latest
