@@ -1,3 +1,34 @@
+# name: Publish HTML to GitHub Pages
+
+# on:
+#   push:
+#     branches:
+#       - develop
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       - name: Copy HTML files
+#         run: |
+#           mkdir -p public
+#           cp -r . /public/
+
+#   deploy:
+#     runs-on: ubuntu-latest
+#     needs: build
+
+#     steps:
+#       - name: Deploy to GitHub Pages
+#         uses: peaceiris/actions-gh-pages@v4
+#         with:
+#           github_token: ${{ secrets.my_token }}
+#           publish_dir: ./public
+
 name: Publish HTML to GitHub Pages
 
 on:
@@ -16,16 +47,4 @@ jobs:
       - name: Copy HTML files
         run: |
           mkdir -p public
-          cp -r ./* /public/
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.my_token }}
-          publish_dir: ./public
-
+          cp -r . public/
