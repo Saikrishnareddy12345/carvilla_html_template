@@ -30,11 +30,18 @@
 #           publish_dir: ./public
 
 name: Publish HTML to GitHub Pages
-
 on:
-  push:
-    branches:
-      - develop
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to run the workflow on'
+        required: true
+        default: 'develop'
+  
+# on:
+#   push:
+#     branches:
+#       - develop
 
 jobs:
   build:
