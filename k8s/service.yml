@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: carvilla-static
+  namespace: carvilla-static
+spec:
+  selector:
+    app: carvilla-static
+  ports:
+    - protocol: TCP
+      port: 80   ##this port is hit from enduser(##http client)
+      targetPort: 8080 ###(this is the port where the application has rreceiving the connections or listening the traffic)
+  type: LoadBalancer
